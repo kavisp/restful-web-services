@@ -2,10 +2,15 @@ package com.restful.webservices.restfulwebservices.user;
 
 import java.util.Date;
 
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Size;
+
 public class User {
 
 	private Integer id;
+	@Size(min = 2, message = "Name must be minimum 2 characters in length")
 	private String name;
+	@Past
 	private Date date;
 
 	protected User() {

@@ -3,6 +3,8 @@ package com.restful.webservices.restfulwebservices.user;
 import java.net.URI;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -29,7 +31,7 @@ public class UserResource {
 	}
 	
 	@PostMapping(path = "/users", consumes = "application/json")
-	public ResponseEntity saveUser(@RequestBody User user) {
+	public ResponseEntity saveUser(@Valid @RequestBody User user) {
 		User savedUSer = service.saveUser(user);
 		URI location = ServletUriComponentsBuilder
 				.fromCurrentRequest()

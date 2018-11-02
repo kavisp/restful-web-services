@@ -4,14 +4,14 @@ import java.util.Date;
 
 public class ExceptionResponse {
 	private String errorMessage;
-	private int errorCode;
+	private String details;
 	private Date timestamp;
 	private String helpUrl;
 	
-	public ExceptionResponse(String errorMessage, int errorCode, Date timestamp, String helpUrl) {
+	public ExceptionResponse(String errorMessage, String details, Date timestamp, String helpUrl) {
 		super();
 		this.errorMessage = errorMessage;
-		this.errorCode = errorCode;
+		this.details = details;
 		this.timestamp = timestamp;
 		this.helpUrl = helpUrl;
 	}
@@ -24,12 +24,12 @@ public class ExceptionResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public int getErrorCode() {
-		return errorCode;
+	public String getDetails() {
+		return details;
 	}
 
-	public void setErrorCode(int errorCode) {
-		this.errorCode = errorCode;
+	public void setDetails(String details) {
+		this.details = details;
 	}
 
 	public Date getTimestamp() {
